@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const express = require("express");
 const sql = require("mysql");
 const consoleTable = require("console.table");
+const fs = require("fs");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -13,14 +14,17 @@ app.use(express.json());
 const options = [
   "View All Employees",
   "Add Employee",
+  "Delete Employee",
+  "View All Roles",
+  "Add Role",
+  "Delete Role",
+  "View All Departments",
+  "Add Department",
+  "Delete Department",
   "Update Employee Manager",
   "Update Employee Role",
   "Search Employees By Manager",
   "Search Employees By Department",
-  "Add Role",
-  "View All Roles",
-  "View All Departments",
-  "Add Department",
   "Quit",
 ];
 
@@ -119,6 +123,26 @@ async function followUpQuestions(answer) {
             .catch((error) => console.error(error));
         });
         break;
+    case "Delete Employee":
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "employeeId",
+        message: "Enter employee ID:",
+      },
+    ]).then((answers) => {
+      const { employeeId } = answers;
+
+      const query = "DELETE FROM employees WHERE id = ?";
+      db.query(query, [employeeId], (err, res) => {
+        if (err) throw err;
+        console.log(res.affectedRows + " employee deleted\n");
+        init();
+      });
+    })
+    .catch((error) => console.error(error));
+      break;
     case "Update Employee Manager":
       inquirer
         .prompt([
@@ -277,6 +301,26 @@ async function followUpQuestions(answer) {
           });
         });
         break;
+    case "Delete Role":
+          inquirer
+            .prompt([
+              {
+                type: "input",
+                name: "role_id",
+                message: "Enter role ID:",
+              },
+            ]).then((answers) => {
+              const { role_id } = answers;
+        
+              const query = "DELETE FROM roles WHERE id = ?";
+              db.query(query, [role_id], (err, res) => {
+                if (err) throw err;
+                console.log(res.affectedRows + " role deleted\n");
+                init();
+              });
+            })
+            .catch((error) => console.error(error));
+              break;
     case "View All Departments":
       const queryDepartments = "SELECT * FROM departments";
       db.query(queryDepartments, (err, results) => {
@@ -308,6 +352,26 @@ async function followUpQuestions(answer) {
           });
         });
         break;
+    case "Delete Department":
+      inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "department_id",
+          message: "Enter Department ID:",
+        },
+      ]).then((answers) => {
+        const { department_id } = answers;
+  
+        const query = "DELETE FROM departments WHERE id = ?";
+        db.query(query, [department_id], (err, res) => {
+          if (err) throw err;
+          console.log(res.affectedRows + " department deleted\n");
+          init();
+        });
+      })
+      .catch((error) => console.error(error));
+        break;
     case "Quit":
       console.log("Quitting the application...");
       process.exit(0);
@@ -320,19 +384,25 @@ async function followUpQuestions(answer) {
 
 // * Creating a function that will be ran at the start of the program and everytime after the user makes a choice
 function init() {
-  inquirer
-    .prompt([
-      {
+  fs.readFile('./ASCII/banner.txt', 'utf8', (err, data) => {
+    if(err) throw err;
+
+    // ! Adding empty strings so that the ASCII text has padding on the top and bottom
+    console.log("");
+    console.log(data);
+    console.log("");
+  
+    inquirer
+      .prompt({
         type: "list",
         name: "ID",
-        message: "What would you like to do?",
+        message: "What would you like to do: ",
         choices: options,
-      },
-    ])
-    .then((answer) => {
-      followUpQuestions(answer);
-    })
-    .catch((error) => console.error(error));
+      })
+      .then((response) => {
+        followUpQuestions(response);
+      });
+  });
 }
 
 init();
