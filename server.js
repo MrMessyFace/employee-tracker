@@ -66,6 +66,7 @@ async function followUpQuestions(answer) {
 
         // Extract the department names from the results
         const departmentOptions = results.map((row) => row.department_name);
+        const titleOptions = results.map((row) => row.title);
 
         inquirer
           .prompt([
@@ -84,6 +85,12 @@ async function followUpQuestions(answer) {
               name: "department",
               message: "Department:",
               choices: departmentOptions, // Use the department names as choices
+            },
+            {
+              type: "list",
+              name: "title",
+              message: "Title:",
+              choices: titleOptions,
             },
             {
               type: "input",
