@@ -209,7 +209,7 @@ async function followUpQuestions(answer) {
               if (err) throw err;
               console.log(
                 res.affectedRows +
-                  " employee's department and role ID updated!\n"
+                " employee's department and role ID updated!\n"
               );
               init();
             }
