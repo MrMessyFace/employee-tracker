@@ -1,169 +1,177 @@
--- Insert departments
-INSERT INTO departments (department_name) VALUES ('Corporate');
-INSERT INTO departments (department_name) VALUES ('Trainers');
-INSERT INTO departments (department_name) VALUES ('Talent');
-INSERT INTO departments (department_name) VALUES ('Referees');
-INSERT INTO departments (department_name) VALUES ('Broadcasters');
-INSERT INTO departments (department_name) VALUES ('Creative');
-INSERT INTO departments (department_name) VALUES ('Producers');
+use employees;
 
--- Insert roles
-INSERT INTO roles (title, salary, department_id) VALUES ('Executive Chairman', 2000000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Chief Content Officer', 1500000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Board Member', 1000000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Chief Executive Officer', 1500000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Executive Vice President of Operations', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Vice President of Global Sales and Partnerships', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Executive Vice President of Talent', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Vice President of Talent Operations and Strategy', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Chief Financial Officer', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Executive Producer', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Chief Legal Officer', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Chief Technology Officer', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Vice President of Live Events', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Vice President of Global Talent Development', 900000, 1);
-INSERT INTO roles (title, salary, department_id) VALUES ('Head Coach', 750000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Assistant Head Coach', 650000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Head Athletic Trainer', 550000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Assistant Coach', 500000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Strength and Conditioning Coach', 500000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Athletic Trainer', 500000, 2);
-INSERT INTO roles (title, salary, department_id) VALUES ('Undisputed WWE Universal Champion', 3000000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Womens Champion', 2000000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Womens Champion', 2000000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('WWE Intercontinental Champion', 2500000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('WWE United States Champion', 2500000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('Undisputed WWE Tag Team Champion', 1750000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('WWE Womens Tag Team Champion', 1250000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Champion', 900000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Womens Champion', 800000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT North American Champion', 700000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Heritage Cup Champion', 700000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Tag Team Champion', 600000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Womens Tag Team Champion', 500000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('Wrestler', 1000000, 3);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Referee', 400000, 4);
-INSERT INTO roles (title, salary, department_id) VALUES ('Referee', 300000, 4);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Lead Commentator', 950000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Lead Commentator', 1250000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Lead Commentator', 650000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Color Commentator', 1000000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Color Commentator', 1000000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Color Commentator', 1000000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Ring Announcer', 900000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Ring Announcer', 900000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Ring Announcer', 500000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Lead Backstage Interviewer', 550000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Lead Backstage Interviewer', 550000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Backstage Interviewer', 600000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Backstage Interviewer', 500000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Backstage Interviewer', 450000, 5);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Vice President of Talent Development Creative', 1450000, 6);
-INSERT INTO roles (title, salary, department_id) VALUES ('Executive Director', 1100000, 6);
-INSERT INTO roles (title, salary, department_id) VALUES ('Raw Lead Writer', 300000, 6);
-INSERT INTO roles (title, salary, department_id) VALUES ('SmackDown Lead Writer', 300000, 6);
-INSERT INTO roles (title, salary, department_id) VALUES ('NXT Lead Writer', 250000, 6);
-INSERT INTO roles (title, salary, department_id) VALUES ('Director of Live Events', 750000, 7);
-INSERT INTO roles (title, salary, department_id) VALUES ('Vice President of Creative Writing and Booking', 750000, 7);
-INSERT INTO roles (title, salary, department_id) VALUES ('Senior Producer', 700000, 7);
-INSERT INTO roles (title, salary, department_id) VALUES ('Producer', 650000, 7);
+INSERT INTO department
+    (name)
+VALUES
+    ('Corporate'),
+    ('Trainers'),
+    ('Talent'),
+    ('Referees'),
+    ('Broadcasters'),
+    ('Creative'),
+    ('Producers');
 
--- Insert employees
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Vince', 'McMahon', 1, 'Corporate', 2000000, NULL);
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Paul', 'Levesque', 2, 'Corporate', 1500000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('George', 'Barrios', 3, 'Corporate', 1000000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Michelle', 'McKenna', 3, 'Corporate', 1000000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Nick', 'Khan', 4, 'Corporate', 1500000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Steve', 'Koonin', 3, 'Corporate', 1000000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Steve', 'Pamon', 3, 'Corporate', 1000000, 'Vince McMahon');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Bradley', 'Blum', 5, 'Corporate', 900000, 'Nick Khan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Craig', 'Stimmel', 6, 'Corporate', 900000, 'Nick Khan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Dan', 'Ventrelle', 7, 'Corporate', 900000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Frank', 'Kimball', 8, 'Corporate', 900000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Frank', 'Riddick', 9, 'Corporate', 900000, 'Nick Khan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Kevin', 'Dunn', 10, 'Corporate', 900000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Maurice', 'Edelson', 11, 'Corporate', 900000, 'Nick Khan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Rajan', 'Mehta', 12, 'Corporate', 900000, 'Nick Khan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Brian', 'James', 13, 'Corporate', 900000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('William', 'Regal', 14, 'Corporate', 900000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Matt', 'Bloom', 15, 'Trainers', 750000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Sara', 'Amato', 16, 'Trainers', 650000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Brian', 'Duncan', 17, 'Trainers', 550000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('David', 'Finlay', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Johnny', 'Moss', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Norman', 'Smiley', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Oney', 'Lorcan', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Robbie', 'Brookside', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Santana', 'Garrett', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Sarah', 'Barnett', 19, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Steve', 'Corino', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Tara', 'Halaby', 20, 'Trainers', 500000, 'Brian Duncan');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Terry', 'Taylor', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Tyler', 'Breeze', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Wesley', 'Blake', 18, 'Trainers', 500000, 'Matt Bloom');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Roman', 'Reigns', 21, 'Talent', 3000000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Bianca', 'Belair', 22, 'Talent', 2000000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Rhea', 'Ripley', 23, 'Talent', 2000000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Gunther', 'Hahn', 24, 'Talent', 2500000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Austin', 'Theory', 25, 'Talent', 2500000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Kevin', 'Owens', 26, 'Talent', 1750000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Sami', 'Zayn', 26, 'Talent', 1750000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Liv', 'Morgan', 27, 'Talent', 1250000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Raquel', 'Rodriguez', 27, 'Talent', 1250000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Carmelo', 'Hayes', 28, 'Talent', 900000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Indi', 'Hartwell', 29, 'Talent', 800000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Wes', 'Lee', 30, 'Talent', 700000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Noam', 'Dar', 31, 'Talent', 700000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Mark', 'Coffey', 32, 'Talent', 600000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Wolfgang', 'Young', 32, 'Talent', 600000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Alba', 'Fyre', 33, 'Talent', 500000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Isla', 'Dawn', 33, 'Talent', 500000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Chad', 'Patton', 35, 'Referees', 400000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Adrian', 'Butler', 35, 'Referees', 400000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Charles', 'Robinson', 35, 'Referees', 400000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Chip', 'Danning', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Dallas', 'Irvin', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Dan', 'Engler', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Danilo', 'Anfibio', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Daphanie', 'LaShaunn', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Derek', 'Sanders', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Eddie', 'Orengo', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Felix', 'Fernandez', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jason', 'Ayers', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jeremy', 'Marcus', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jessika', 'Carr', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Joey', 'Gonzalez', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('John', 'Cone', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Rod', 'Zapata', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Ryan', 'Tran', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Shawn', 'Bennett', 36, 'Referees', 300000, 'Chad Patton');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Michael', 'Cole', 38, 'Broadcasters', 1250000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Kevin', 'Patrick', 37, 'Broadcasters', 950000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Corey', 'Graves', 40, 'Broadcasters', 1000000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Mike', 'Rome', 43, 'Broadcasters', 900000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Cathy', 'Kelley', 46, 'Broadcasters', 550000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Byron', 'Saxton', 48, 'Broadcasters', 600000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Wade', 'Barrett', 41, 'Broadcasters', 1000000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Samantha', 'Irvin', 44, 'Broadcasters', 900000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Kayla', 'Braxton', 47, 'Broadcasters', 550000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Megan', 'Morant', 49, 'Broadcasters', 500000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Vic', 'Joseph', 39, 'Broadcasters', 650000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Booker', 'Huffman', 42, 'Broadcasters', 1000000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Alicia', 'Taylor', 45, 'Broadcasters', 500000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('McKenzie', 'Mitchell', 50, 'Broadcasters', 450000, 'Michael Cole');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Shawn', 'Michaels', 51, 'Creative', 1450000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Bruce', 'Prichard', 52, 'Creative', 1100000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jonathan', 'Baeckstrom', 53, 'Creative', 300000, 'Bruce Prichard');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Ed', 'Koskey', 54, 'Creative', 300000, 'Bruce Prichard');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Johnny', 'Russo', 55, 'Creative', 250000, 'Shawn Michaels');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Adam', 'Pearce', 56, 'Producers', 750000, 'Paul Levesque');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Michael', 'Hayes', 57, 'Producers', 750000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Christopher', 'Park', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jamie', 'Noble', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Jason', 'Jordan', 58, 'Producers', 700000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Kenny', 'Dykstra', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Molly', 'Holly', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Peter', 'Williams', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Gregory', 'Helms', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Shawn', 'Daivari', 59, 'Producers', 650000, 'Adam Pearce');
-INSERT INTO employees (first_name, last_name, title_id, department, salary, manager) VALUES ('Theodore', 'Wilson', 59, 'Producers', 650000, 'Adam Pearce');
+INSERT INTO role
+    (title, salary, department_id)
+VALUES
+    ('Executive Chairman', 2000000, 1),
+    ('Chief Content Officer', 1500000, 1),
+    ('Board Member', 1000000, 1),
+    ('Chief Executive Officer', 1500000, 1),
+    ('Executive Vice President of Operations', 900000, 1),
+    ('Senior Vice President of Global Sales and Partnerships', 900000, 1),
+    ('Executive Vice President of Talent', 900000, 1),
+    ('Senior Vice President of Talent Operations and Strategy', 900000, 1),
+    ('Chief Financial Officer', 900000, 1),
+    ('Executive Producer', 900000, 1),
+    ('Chief Legal Officer', 900000, 1),
+    ('Chief Technology Officer', 900000, 1),
+    ('Senior Vice President of Live Events', 900000, 1),
+    ('Vice President of Global Talent Development', 900000, 1),
+    ('Head Coach', 750000, 2),
+    ('Assistant Head Coach', 650000, 2),
+    ('Head Athletic Trainer', 550000, 2),
+    ('Assistant Coach', 500000, 2),
+    ('Strength and Conditioning Coach', 500000, 2),
+    ('Athletic Trainer', 500000, 2),
+    ('Undisputed WWE Universal Champion', 3000000, 3),
+    ('Raw Womens Champion', 2000000, 3),
+    ('SmackDown Womens Champion', 2000000, 3),
+    ('WWE Intercontinental Champion', 2500000, 3),
+    ('WWE United States Champion', 2500000, 3),
+    ('Undisputed WWE Tag Team Champion', 1750000, 3),
+    ('WWE Womens Tag Team Champion', 1250000, 3),
+    ('NXT Champion', 900000, 3),
+    ('NXT Womens Champion', 800000, 3),
+    ('NXT North American Champion', 700000, 3),
+    ('NXT Heritage Cup Champion', 700000, 3),
+    ('NXT Tag Team Champion', 600000, 3),
+    ('NXT Womens Tag Team Champion', 500000, 3),
+    ('Wrestler', 1000000, 3),
+    ('Senior Referee', 400000, 4),
+    ('Referee', 300000, 4),
+    ('Raw Lead Commentator', 950000, 5),
+    ('SmackDown Lead Commentator', 1250000, 5),
+    ('NXT Lead Commentator', 650000, 5),
+    ('Raw Color Commentator', 1000000, 5),
+    ('SmackDown Color Commentator', 1000000, 5),
+    ('NXT Color Commentator', 1000000, 5),
+    ('Raw Ring Announcer', 900000, 5),
+    ('SmackDown Ring Announcer', 900000, 5),
+    ('NXT Ring Announcer', 500000, 5),
+    ('Raw Lead Backstage Interviewer', 550000, 5),
+    ('SmackDown Lead Backstage Interviewer', 550000, 5),
+    ('Raw Backstage Interviewer', 600000, 5),
+    ('SmackDown Backstage Interviewer', 500000, 5),
+    ('NXT Backstage Interviewer', 450000, 5),
+    ('Senior Vice President of Talent Development Creative', 1450000, 6),
+    ('Executive Director', 1100000, 6),
+    ('Raw Lead Writer', 300000, 6),
+    ('SmackDown Lead Writer', 300000, 6),
+    ('NXT Lead Writer', 250000, 6),
+    ('Director of Live Events', 750000, 7),
+    ('Vice President of Creative Writing and Booking', 750000, 7),
+    ('Senior Producer', 700000, 7),
+    ('Producer', 650000, 7);
+
+INSERT INTO employee
+    (first_name, last_name, role_id, manager_id)
+VALUES
+    ('Vince', 'McMahon', 1, NULL),
+    ('Paul', 'Levesque', 2, 1),
+    ('George', 'Barrios', 3, 1),
+    ('Michelle', 'McKenna', 3, 1),
+    ('Nick', 'Khan', 4, 1),
+    ('Steve', 'Koonin', 3, 1),
+    ('Steve', 'Pamon', 3, 1),
+    ('Bradley', 'Blum', 5, 4),
+    ('Craig', 'Stimmel', 6, 4),
+    ('Dan', 'Ventrelle', 7, 2),
+    ('Frank', 'Kimball', 8, 2),
+    ('Frank', 'Riddick', 9, 4),
+    ('Kevin', 'Dunn', 10, 2),
+    ('Maurice', 'Edelson', 11, 4),
+    ('Rajan', 'Mehta', 12, 4),
+    ('Brian', 'James', 13, 2),
+    ('William', 'Regal', 14, 2),
+    ('Matt', 'Bloom', 15, 51),
+    ('Sara', 'Amato', 16, 15),
+    ('Brian', 'Duncan', 17, 15),
+    ('David', 'Finlay', 18, 15),
+    ('Johnny', 'Moss', 18, 15),
+    ('Norman', 'Smiley', 18, 15),
+    ('Oney', 'Lorcan', 18, 15),
+    ('Robbie', 'Brookside', 18, 15),
+    ('Santana', 'Garrett', 18, 15),
+    ('Sarah', 'Barnett', 19, 15),
+    ('Steve', 'Corino', 18, 15),
+    ('Tara', 'Halaby', 20, 17),
+    ('Terry', 'Taylor', 18, 15),
+    ('Tyler', 'Breeze', 18, 15),
+    ('Wesley', 'Blake', 18, 15),
+    ('Roman', 'Reigns', 21, 56),
+    ('Bianca', 'Belair', 22, 56),
+    ('Rhea', 'Ripley', 23, 56),
+    ('Gunther', 'Hahn', 24, 56),
+    ('Austin', 'Theory', 25, 56),
+    ('Kevin', 'Owens', 26, 56),
+    ('Sami', 'Zayn', 26, 56),
+    ('Liv', 'Morgan', 27, 56),
+    ('Raquel', 'Rodriguez', 27, 56),
+    ('Carmelo', 'Hayes', 28, 51),
+    ('Indi', 'Hartwell', 29, 51),
+    ('Wes', 'Lee', 30, 51),
+    ('Noam', 'Dar', 31, 51),
+    ('Mark', 'Coffey', 32, 51),
+    ('Wolfgang', 'Young', 32, 51),
+    ('Alba', 'Fyre', 33, 51),
+    ('Isla', 'Dawn', 33, 51),
+    ('Chad', 'Patton', 35, 2),
+    ('Adrian', 'Butler', 35, 35),
+    ('Charles', 'Robinson', 35, 35),
+    ('Chip', 'Danning', 36, 35),
+    ('Dallas', 'Irvin', 36, 35),
+    ('Dan', 'Engler', 36, 35),
+    ('Danilo', 'Anfibio', 36, 35),
+    ('Daphanie', 'LaShaunn', 36, 35),
+    ('Derek', 'Sanders', 36, 35),
+    ('Eddie', 'Orengo', 36, 35),
+    ('Felix', 'Fernandez', 36, 35),
+    ('Jason', 'Ayers', 36, 35),
+    ('Jeremy', 'Marcus', 36, 35),
+    ('Jessika', 'Carr', 36, 35),
+    ('Joey', 'Gonzalez', 36, 35),
+    ('John', 'Cone', 36, 35),
+    ('Rod', 'Zapata', 36, 35),
+    ('Ryan', 'Tran', 36, 35),
+    ('Shawn', 'Bennett', 36, 35),
+    ('Michael', 'Cole', 38, 2),
+    ('Kevin', 'Patrick', 37, 38),
+    ('Corey', 'Graves', 40, 38),
+    ('Mike', 'Rome', 43, 38),
+    ('Cathy', 'Kelley', 46, 38),
+    ('Byron', 'Saxton', 48, 38),
+    ('Wade', 'Barrett', 41, 38),
+    ('Samantha', 'Irvin', 44, 38),
+    ('Kayla', 'Braxton', 47, 38),
+    ('Megan', 'Morant', 49, 38),
+    ('Vic', 'Joseph', 39, 38),
+    ('Booker', 'Huffman', 42, 38),
+    ('Alicia', 'Taylor', 45, 38),
+    ('McKenzie', 'Mitchell', 50, 38),
+    ('Shawn', 'Michaels', 51, 2),
+    ('Bruce', 'Prichard', 52, 2),
+    ('Jonathan', 'Baeckstrom', 53, 52),
+    ('Ed', 'Koskey', 54, 52),
+    ('Johnny', 'Russo', 55, 51),
+    ('Adam', 'Pearce', 56, 2),
+    ('Michael', 'Hayes', 57, 56),
+    ('Christopher', 'Park', 59, 56),
+    ('Jamie', 'Noble', 59, 56),
+    ('Jason', 'Jordan', 58, 56),
+    ('Kenny', 'Dykstra', 59, 56),
+    ('Molly', 'Holly', 59, 56),
+    ('Peter', 'Williams', 59, 56),
+    ('Gregory', 'Helms', 59, 56),
+    ('Shawn', 'Daivari', 59, 56),
+    ('Theodore', 'Wilson', 59, 56);
