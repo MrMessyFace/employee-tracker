@@ -14,4 +14,4 @@ When using "npm start" to start the app, it asks a series of questions that the 
 
 ## Credits
 
-See how it works in this [video demonstration](...).
+See how it works in this [video demonstration](https://drive.google.com/file/d/1H8dcsMjENQv2zEfXL24NgO-ekdcEz6TH/view).
